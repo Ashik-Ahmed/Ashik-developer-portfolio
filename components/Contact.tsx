@@ -21,7 +21,7 @@ export default function Contact({ }: Props) {
 
         console.log(formData);
 
-        emailjs.sendForm('service_dcch1lq', 'template_n1myfln', form.current, 'T00TwejzqkVHjfVU1')
+        emailjs.sendForm('service_dcch1lq', 'template_n1myfln', form.current as unknown as HTMLFormElement, 'T00TwejzqkVHjfVU1')
             .then((result) => {
                 console.log(result.text);
                 resetField('user_name');
@@ -33,7 +33,7 @@ export default function Contact({ }: Props) {
             });
     };
 
-    const form = useRef();
+    const form = useRef(null);
 
     return (
         <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl p-10 justify-evenly mx-auto items-center'>
@@ -42,7 +42,7 @@ export default function Contact({ }: Props) {
             <div className='flex flex-col space-y-10 absolute top-36'>
                 <h4 className='text-4xl font-semibold text-center'>
                     I have got just what you need.{' '}
-                    <span className='underline decoration-[#F7AB0A]/50 '>Let's Talk</span>
+                    <span className='underline decoration-[#F7AB0A]/50 '>{`Let's Talk`}</span>
                 </h4>
 
                 <div className='space-y-2'>
@@ -58,7 +58,7 @@ export default function Contact({ }: Props) {
 
                     <div className='flex items-center space-x-5 justify-center'>
                         <ImLocation className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-                        <p className='text-xl'>+Mohammadpur, Dhaka-1207</p>
+                        <p className='text-xl'>Mohammadpur, Dhaka-1207</p>
                     </div>
                 </div>
                 <form ref={form} onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
@@ -79,6 +79,6 @@ export default function Contact({ }: Props) {
                     <button type='submit' className='bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg '>Submit</button>
                 </form>
             </div>
-        </div>
+        </div >
     )
 }
