@@ -16,13 +16,13 @@ function Projects({ }: Props) {
             transition={{
                 duration: 1.5
             }}
-            className='h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly items-center z-0'>
+            className='h-screen relative flex flex-col text-left md:flex-row max-w-full justify-evenly items-center overflow-hidden'>
             <h3 className='absolute top-16 uppercase tracking-[20px] text-gray-500 text-2xl'>Projects</h3>
 
-            <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory'>
+            <div className='relative w-full flex overflow-y-hidden snap-x snap-mandatory scrollbar-thumb-[#F7AB0A] scrollbar-track-white scrollbar-thin'>
                 {
                     projects.map((project, index) => (
-                        <div key={index} className='relative top-12 w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44'>
+                        <div key={index} className='relative top-12 w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 overflow-x-scroll overflow-y-hidden snap-x snap-mandatory'>
                             <motion.img
                                 initial={{
                                     y: -300,
@@ -38,7 +38,7 @@ function Projects({ }: Props) {
                                 viewport={{
                                     once: true
                                 }}
-                                className='w-72'
+                                className='w-80'
                                 src="https://avatars.githubusercontent.com/u/30996446?v=4" alt="" />
                             <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                                 <h4 className='text-4xl font-semibold text-center'>
@@ -50,10 +50,10 @@ function Projects({ }: Props) {
                     ))
                 }
             </div>
-            <div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12'>
+            <div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[400px] -skew-y-12 -mt-24'>
 
             </div>
-        </motion.div>
+        </motion.div >
     )
 }
 
