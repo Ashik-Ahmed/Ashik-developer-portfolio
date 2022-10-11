@@ -5,7 +5,7 @@ type Props = {}
 
 export default function ExperienceCard({ }: Props) {
     return (
-        <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+        <article className='flex flex-col rounded-lg items-center space-y-3 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] px-10 py-3 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 relative top-24'>
             <motion.img
                 initial={{
                     y: -100,
@@ -15,7 +15,8 @@ export default function ExperienceCard({ }: Props) {
                     duration: 1.2
                 }}
                 whileInView={{
-                    opacity: 1
+                    opacity: 1,
+                    y: 0
                 }}
                 viewport={{
                     once: true
@@ -32,12 +33,12 @@ export default function ExperienceCard({ }: Props) {
                     <img className='w-10 h-10 rounded-full' src="https://ashik-ahmed.netlify.app/static/media/vscode.a2ea685afa8a93556564.png" alt="" />
                 </div>
                 <p className='uppercase py-5 text-gray-300'>Started work... - Ended... - </p>
-                <ul className='list-disc space-y-4 ml-5 text-lg'>
-                    <li>Summary Points</li>
-                    <li>Summary Points</li>
-                    <li>Summary Points</li>
-                    <li>Summary Points</li>
-                    <li>Summary Points</li>
+                <ul className='list-disc space-y-1 ml-5 text-lg'>
+                    <li>Summary Points Summary Points Summary Points Summary </li>
+                    <li>Summary Points Summary Summary Points Summary Points</li>
+                    <li>Summary Points Summary Summary Points Summary Points</li>
+                    <li>Summary Points Summary Summary Points Summary Points</li>
+                    <li>Summary Points Summary Summary Points Summary Points</li>
                 </ul>
             </div>
         </article>
